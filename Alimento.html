@@ -110,6 +110,8 @@
 
   <section class="description">
     
+<p>Clase <a href="Alimento.html"><code>Alimento</code></a> Métodos: initialize is_empty? insertaAdelante insertaAtras insertaArray extraerDelante pos: da el valor en la posiicón <a href="Alimento.html#method-i-to_s"><code>to_s</code></a></p>
+
   </section>
 
   
@@ -135,7 +137,7 @@
 
         <div class="method-description">
         
-        
+        <p>getters :nombre, :proteinas, :carbohidratos, :lipidos, :gasEfectoInv, :terrenoAño</p>
         
         </div>
       </div>
@@ -148,7 +150,7 @@
 
         <div class="method-description">
         
-        
+        <p>getters :nombre, :proteinas, :carbohidratos, :lipidos, :gasEfectoInv, :terrenoAño</p>
         
         </div>
       </div>
@@ -161,7 +163,7 @@
 
         <div class="method-description">
         
-        
+        <p>getters :nombre, :proteinas, :carbohidratos, :lipidos, :gasEfectoInv, :terrenoAño</p>
         
         </div>
       </div>
@@ -174,7 +176,7 @@
 
         <div class="method-description">
         
-        
+        <p>getters :nombre, :proteinas, :carbohidratos, :lipidos, :gasEfectoInv, :terrenoAño</p>
         
         </div>
       </div>
@@ -187,7 +189,7 @@
 
         <div class="method-description">
         
-        
+        <p>getters :nombre, :proteinas, :carbohidratos, :lipidos, :gasEfectoInv, :terrenoAño</p>
         
         </div>
       </div>
@@ -200,7 +202,7 @@
 
         <div class="method-description">
         
-        
+        <p>getters :nombre, :proteinas, :carbohidratos, :lipidos, :gasEfectoInv, :terrenoAño</p>
         
         </div>
       </div>
@@ -228,13 +230,23 @@
 
         <div class="method-description">
           
-          
+          <p>def initialize()</p>
+
+<pre class="ruby"><span class="ruby-ivar">@nombre</span> = <span class="ruby-identifier">nombre</span>
+<span class="ruby-ivar">@proteinas</span> = <span class="ruby-identifier">proteinas</span>
+<span class="ruby-ivar">@carbohidratos</span> = <span class="ruby-identifier">carbohidratos</span>
+<span class="ruby-ivar">@lipidos</span> = <span class="ruby-identifier">lipidos</span>
+<span class="ruby-ivar">@gasEfectoInv</span> = <span class="ruby-identifier">gasEfectoInv</span>
+<span class="ruby-ivar">@terrenoAño</span> = <span class="ruby-identifier">terrenoAño</span>
+</pre>
+
+<p>end</p>
           
           
 
           
           <div class="method-source-code" id="new-source">
-            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 8</span>
+            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 34</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span> = <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">proteinas</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">carbohidratos</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">lipidos</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">gasEfectoInv</span> = <span class="ruby-value">0.0</span>, <span class="ruby-identifier">terrenoAño</span> = <span class="ruby-value">0.0</span>)
     <span class="ruby-ivar">@nombre</span> = <span class="ruby-identifier">nombre</span>
     <span class="ruby-ivar">@proteinas</span> = <span class="ruby-identifier">proteinas</span>
@@ -274,13 +286,13 @@
 
         <div class="method-description">
           
-          
+          <p>Nos permite que se puedan comparar dos alimentos</p>
           
           
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 37</span>
+            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 75</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
   <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Alimento</span>
   ( <span class="ruby-keyword">self</span>.<span class="ruby-identifier">valorEnergetico</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">gasEfectoInv</span> ) <span class="ruby-operator">&lt;=&gt;</span> ( <span class="ruby-identifier">other</span>.<span class="ruby-identifier">valorEnergetico</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">gasEfectoInv</span> )
@@ -308,13 +320,13 @@
 
         <div class="method-description">
           
-          
+          <p>Nos muestra las emisiones formateadas</p>
           
           
 
           
           <div class="method-source-code" id="emisiones-source">
-            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 21</span>
+            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 51</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">emisiones</span>
   <span class="ruby-node">&quot;Las emisiones son de: #{@gasEfectoInv} kgCO^2eq&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -341,13 +353,13 @@
 
         <div class="method-description">
           
-          
+          <p>Nos muestra el Nombre del alimento formateado</p>
           
           
 
           
           <div class="method-source-code" id="identificador-source">
-            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 17</span>
+            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">identificador</span>
   <span class="ruby-node">&quot;El alimento es: #{@nombre}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -374,13 +386,13 @@
 
         <div class="method-description">
           
-          
+          <p>Nos muestra el terreno formateado</p>
           
           
 
           
           <div class="method-source-code" id="terreno-source">
-            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 25</span>
+            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 57</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">terreno</span>
   <span class="ruby-node">&quot;El terreno utilizado es de: #{@terrenoAño} m^2/año&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -407,13 +419,13 @@
 
         <div class="method-description">
           
-          
+          <p>Nos muestra la salida de un alimento formateado</p>
           
           
 
           
           <div class="method-source-code" id="to_s-source">
-            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 29</span>
+            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 63</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
   <span class="ruby-node">&quot;#{@nombre}: proteínas #{@proteinas}, carbohidratos #{@carbohidratos}, lípidos #{@lipidos}, emisiones #{@gasEfectoInv}, terreno #{@terrenoAño}&quot;</span>
 <span class="ruby-keyword">end</span></pre>
@@ -440,13 +452,13 @@
 
         <div class="method-description">
           
-          
+          <p>Nos da el valor energético del alimento</p>
           
           
 
           
           <div class="method-source-code" id="valorEnergetico-source">
-            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 33</span>
+            <pre><span class="ruby-comment"># File lib/prct06_tdd/alimento.rb, line 69</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valorEnergetico</span>
   ( <span class="ruby-ivar">@carbohidratos</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@lipidos</span> <span class="ruby-operator">*</span> <span class="ruby-value">9</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@proteinas</span> <span class="ruby-operator">*</span> <span class="ruby-value">4</span> )
 <span class="ruby-keyword">end</span></pre>

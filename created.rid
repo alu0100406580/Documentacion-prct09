@@ -1,9 +1,9 @@
-Thu, 19 Dec 2019 02:45:25 +0000
-./lib/prct06_tdd.rb	Mon, 16 Dec 2019 20:07:43 +0000
-./lib/prct06_tdd/alimento.rb	Mon, 16 Dec 2019 20:07:43 +0000
-./lib/prct06_tdd/listas.rb	Mon, 16 Dec 2019 20:07:43 +0000
-./lib/prct06_tdd/version.rb	Mon, 16 Dec 2019 20:07:43 +0000
-./lib/prct06_tdd/plato.rb	Thu, 19 Dec 2019 02:36:47 +0000
+Thu, 19 Dec 2019 11:39:55 +0000
+./lib/prct06_tdd.rb	Thu, 19 Dec 2019 11:39:31 +0000
+./lib/prct06_tdd/alimento.rb	Thu, 19 Dec 2019 11:26:16 +0000
+./lib/prct06_tdd/listas.rb	Thu, 19 Dec 2019 11:19:51 +0000
+./lib/prct06_tdd/version.rb	Thu, 19 Dec 2019 11:39:52 +0000
+./lib/prct06_tdd/plato.rb	Thu, 19 Dec 2019 11:27:01 +0000
 ./Gemfile	Mon, 16 Dec 2019 20:07:43 +0000
 ./Guardfile	Mon, 16 Dec 2019 20:07:43 +0000
 ./README.md	Mon, 16 Dec 2019 20:07:43 +0000
@@ -12,5 +12,5 @@ Thu, 19 Dec 2019 02:45:25 +0000
 ./bin/console	Mon, 16 Dec 2019 20:07:43 +0000
 ./Rakefile	Mon, 16 Dec 2019 20:07:43 +0000
 ./spec/spec_helper.rb	Mon, 16 Dec 2019 20:07:43 +0000
-./spec/prct06_tdd_spec.rb	Thu, 19 Dec 2019 02:05:49 +0000
-./prct06_tdd.gemspec	Mon, 16 Dec 2019 20:07:43 +0000
+./spec/prct06_tdd_spec.rb	Thu, 19 Dec 2019 11:29:46 +0000
+./prct06_tdd.gemspec	Thu, 19 Dec 2019 11:36:39 +0000
