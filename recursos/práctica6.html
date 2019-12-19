@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>práctica6 - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../Guardfile.html">Guardfile</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../bin/setup.html">setup</a>
+  
+    <li><a href="../prct06_tdd_gemspec.html">prct06_tdd.gemspec</a>
+  
+    <li><a href="../recursos/auxiliar.html">auxiliar</a>
+  
+    <li><a href="../recursos/p08_pdf.html">p08.pdf</a>
+  
+    <li><a href="../recursos/pr7.html">pr7</a>
+  
+    <li><a href="../recursos/pr8.html">pr8</a>
+  
+    <li><a href="../recursos/práctica6.html">práctica6</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page recursos/práctica6">
+
+<p>RSpec.describe <a href="../Prct06Tdd.html"><code>Prct06Tdd</code></a> do</p>
+
+<pre>it &quot;has a version number&quot; do
+  expect(Prct06Tdd::VERSION).not_to be nil
+end
+
+describe Alimento do
+  before :each do
+    @chocolate = Alimento.new( &quot;chocolate&quot;, 5.3, 47.0, 30.0, 2.3, 3.4 )
+    @pollo = Alimento.new( &quot;pollo&quot;, 20.6, 0.0, 5.6, 5.7, 7.1 )
+    @queso = Alimento.new( &quot;queso&quot;,  25.0, 1.3, 33.0, 11.0, 41.0 )
+    @tofu = Alimento.new( &quot;tofu&quot;, 8.0, 1.9, 4.8, 2.0, 2.2 )
+    @carne_vaca = Alimento.new( &quot;carne de vaca&quot;, 21.1, 0.0, 3.1, 50.0, 164.0 )
+    @cerveza = Alimento.new( &quot;cerveza&quot;,  0.5, 3.6, 0.0, 0.24, 0.22 )
+    @carne_cordero = Alimento.new( &quot;carne de cordero&quot;,  18.0, 0.0, 17.0, 20.0, 185.0 )
+    @salmon = Alimento.new( &quot;salmón&quot;, 19.9, 0.0, 13.6, 6.0, 3.7 )
+    @lentejas = Alimento.new( &quot;lentejas&quot;, 23.5, 52.0, 1.4, 0.4, 3.4 )
+    @nuez = Alimento.new( &quot;nuez&quot;,  20.0, 21.0, 54.0, 0.3, 7.9 )
+    @leche_vaca = Alimento.new( &quot;leche de vaca&quot;, 3.3, 4.8, 3.2, 3.2, 8.9 )
+    @huevos = Alimento.new( &quot;huevos&quot;,  13.0, 1.1, 11.0, 4.2, 5.7 )
+    @camarones = Alimento.new( &quot;camarones&quot;, 17.6, 1.5, 0.6, 18.0, 2.0 )
+    @cerdo = Alimento.new( &quot;cerdo&quot;, 21.5, 0.0, 6.3, 7.6, 11.0 )
+    @cafe = Alimento.new( &quot;café&quot;, 0.1, 0.0, 0.0, 0.4, 0.3 )
+
+  end
+  context &quot;Creamos la clase Alimento&quot; do
+    it &quot;No nulo genérico&quot; do
+      expect( Alimento.new() ).not_to eq( nil )
+    end
+  end
+
+  context &quot;Creamos los alimentos de manera correcta&quot; do
+    it &quot;chocolate no nulo&quot; do
+      expect( @chocolate ).not_to eq( nil )
+    end
+    it &quot;pollo no nulo&quot; do
+      expect( @pollo ).not_to eq( nil )
+    end
+    it &quot;queso no nulo&quot; do
+      expect( @queso ).not_to eq( nil )
+    end
+  end
+
+  context &quot;Nombre del alimento&quot; do
+    it &quot;nombre chocolate&quot; do
+      expect( @chocolate.identificador ).to eq(&quot;El alimento es: chocolate&quot;)
+    end
+    it &quot;nombre pollo&quot; do
+      expect( @pollo.identificador ).to eq(&quot;El alimento es: pollo&quot;)
+    end
+    it &quot;nombre queso&quot; do
+      expect( @queso.identificador ).to eq(&quot;El alimento es: queso&quot;)
+    end
+  end
+
+  context &quot;Emisiones de gases de efecto invernadero&quot; do
+    it &quot;Emisiones del chocolate&quot; do
+      expect( @chocolate.emisiones ).to eq(&quot;Las emisiones son de: #{2.3} kgCO^2eq&quot;)
+    end
+    it &quot;Emisiones del pollo&quot; do
+      expect( @pollo.emisiones ).to eq(&quot;Las emisiones son de: #{5.7} kgCO^2eq&quot;)
+    end
+    it &quot;emisiones del queso&quot; do
+      expect( @queso.emisiones ).to eq(&quot;Las emisiones son de: #{11.0} kgCO^2eq&quot;)
+    end
+  end
+
+  context &quot;Terreno utilizado&quot; do
+    it &quot;Terreno usado por el chocolate&quot; do
+      expect( @chocolate.terreno ).to eq(&quot;El terreno utilizado es de: #{3.4} m^2/año&quot;)
+    end
+    it &quot;Terreno usado por el pollo&quot; do
+      expect( @pollo.terreno ).to eq(&quot;El terreno utilizado es de: #{7.1} m^2/año&quot;)
+    end
+    it &quot;Terreno usado por el queso&quot; do
+      expect( @queso.terreno ).to eq(&quot;El terreno utilizado es de: #{41.0} m^2/año&quot;)
+    end
+  end
+
+  context &quot;Salida de alimento formateado&quot; do
+    it &quot;chocolate to_s&quot; do
+      expect( @chocolate.to_s ).to eq(&quot;chocolate: proteínas #{5.3}, carbohidratos #{47.0}, lípidos #{30.0}, emisiones #{2.3}, terreno #{3.4}&quot;)
+    end
+    it &quot;pollo to_s&quot; do
+      expect( @pollo.to_s ).to eq(&quot;pollo: proteínas #{20.6}, carbohidratos #{0.0}, lípidos #{5.6}, emisiones #{5.7}, terreno #{7.1}&quot;)
+    end
+    it &quot;queso to_s&quot; do
+      expect( @queso.to_s ).to eq(&quot;queso: proteínas #{25.0}, carbohidratos #{1.3}, lípidos #{33.0}, emisiones #{11.0}, terreno #{41.0}&quot;)
+    end
+  end
+
+  context &quot;Obtener el valor Energético de un alimento&quot; do
+    it &quot;Valor energético del chocolate&quot; do
+      expect( @chocolate.valorEnergetico ).to eq(479.2)
+    end
+    it &quot;Valor energético del pollo&quot; do
+      expect( @pollo.valorEnergetico ).to eq(132.8)
+    end
+    it &quot;Valor energético del queso&quot; do
+      expect( @queso.valorEnergetico ).to eq(402.2)
+    end
+  end
+
+  context &quot;Impacto Ambiental diario&quot; do      
+    it &quot;Impacto Ambiental diario de un hombre 20-39&quot; do
+      @alimentos = [ @chocolate, @chocolate, @chocolate, @chocolate, @nuez, @huevos ]
+      def impactoAmbientalHombre( alimentos )
+        cdr = 0
+        proteinas = 0
+        gases = 0.0
+        alimentos.each do | item |
+          cdr += item.valorEnergetico()
+          proteinas += item.proteinas()
+          gases += item.gasEfectoInv
+        end
+        &quot;Con este menú obtiene el #{(cdr/30.0).round}% CDR Kcal, y proteinas #{proteinas}g/54g con una emisión de #{gases}KgCO2eq&quot;
+      end
+
+      expect( impactoAmbientalHombre( @alimentos ) ).to eq(&quot;Con este menú obtiene el #{91}% CDR Kcal, y proteinas #{54.2}g/54g con una emisión de #{13.7}KgCO2eq&quot;)
+    end
+
+    it &quot;Impacto Ambiental diario de una mujer 20-39&quot; do
+      @alimentos2 = [ @chocolate, @chocolate, @chocolate, @nuez, @cerveza, @leche_vaca ]
+      def impactoAmbientalMujer( alimentos )
+        cdr = 0
+        proteinas = 0.0
+        gases = 0.0
+        alimentos.each do | item |
+          cdr += item.valorEnergetico()
+          proteinas += item.proteinas()
+          gases += item.gasEfectoInv
+        end
+        &quot;Con este menú obtiene el #{(cdr/23.0).round}% CDR Kcal, y proteinas #{proteinas.round}g/41g con una emisión de #{gases}KgCO2eq&quot;
+      end
+
+      expect( impactoAmbientalMujer( @alimentos2 ) ).to eq(&quot;Con este menú obtiene el #{94}% CDR Kcal, y proteinas #{40}g/41g con una emisión de #{10.64}KgCO2eq&quot;)
+    end
+  end</pre>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

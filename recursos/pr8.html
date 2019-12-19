@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>pr8 - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../Guardfile.html">Guardfile</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../bin/setup.html">setup</a>
+  
+    <li><a href="../prct06_tdd_gemspec.html">prct06_tdd.gemspec</a>
+  
+    <li><a href="../recursos/auxiliar.html">auxiliar</a>
+  
+    <li><a href="../recursos/p08_pdf.html">p08.pdf</a>
+  
+    <li><a href="../recursos/pr7.html">pr7</a>
+  
+    <li><a href="../recursos/pr8.html">pr8</a>
+  
+    <li><a href="../recursos/práctica6.html">práctica6</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page recursos/pr8">
+
+<pre>  describe Plato do
+    before :each do
+      @españolaM = Lista.new( [ @chocolate, @lentejas, @nuez, @queso, @cerveza, @tofu, @huevos, @cerveza ] )
+      @plato1 = Plato.new( &quot;Ternera con salsa de queso&quot;, [ @carne_vaca, @nuez, @queso ], [ 100, 50, 32 ] )
+      @plato2 = PlatoAmbiental.new( &quot;Lasaña de de pollo&quot;, [ @pollo, @queso, @huevos, @leche_vaca], [ 200, 100, 75, 300 ] )
+    end
+
+    context &quot;Comparar dos alimentos&quot; do
+      it &quot;&lt;&quot; do
+        expect( @carne_vaca &lt; @cafe ).to eq( false )
+      end
+      it &quot;&gt;&quot; do
+        expect( @carne_vaca &gt; @cafe ).to eq( true )
+      end
+      it &quot;&gt;=&quot; do
+        expect( @carne_vaca &gt;= @cafe ).to eq( true )
+      end
+      it &quot;&lt;=&quot; do
+        expect( @carne_vaca &lt;= @cafe ).to eq( false )
+      end
+      it &quot;==&quot; do
+        expect( @carne_vaca == @cafe ).to eq( false )
+      end
+    end
+
+    context &quot;Clase Lista añadido el módulo Enumerable&quot; do
+      it &quot;método collect&quot; do
+      expect( @españolaM.collect { | alimento | alimento.nombre + &quot;_alimento&quot; } ).to eq( [ &quot;chocolate_alimento&quot;,  &quot;lentejas_alimento&quot;,  &quot;nuez_alimento&quot;,  &quot;queso_alimento&quot;,  &quot;cerveza_alimento&quot;,  &quot;tofu_alimento&quot;,  &quot;huevos_alimento&quot;,  &quot;cerveza_alimento&quot; ] )
+      end
+      it &quot;método select&quot; do
+      expect( @españolaM.select{ | alimento | alimento.carbohidratos &gt; 10 } ).to eq([ @chocolate, @lentejas, @nuez] )
+      end
+      it &quot;método max&quot; do
+      expect( @españolaM.max ).to eq( @nuez )
+      end
+      it &quot;método min&quot; do
+      expect( @españolaM.min).to eq( @cerveza )
+      end
+      it &quot;método sort&quot; do
+      expect( @españolaM.sort ).to eq( [ @cerveza, @cerveza, @tofu, @huevos, @lentejas, @queso, @chocolate, @nuez ] )
+      end
+    end
+
+    context &quot;Creamos La clase Plato&quot; do
+      it &quot;Plato no nulo&quot; do
+        expect( @plato1 ).not_to eq( nil )
+      end
+      it &quot;Plato atributo nombre&quot; do
+        expect( @plato1.nombre ).to eq( &quot;Ternera con salsa de queso&quot; )
+      end
+      it &quot;Plato atributo listaAlimentos&quot; do
+        expect( @plato1.listaAlimentos.to_s ).to eq( Lista.new( [ @carne_vaca, @nuez, @queso ] ).to_s )
+      end
+      it &quot;Plato atributo listaGramos&quot; do
+        expect( @plato1.listaGramos.to_s ).to eq(  Lista.new( [ 100, 50, 32  ] ).to_s )
+      end
+      it &quot;Plato atributo vct(Valor Calorico Total)&quot; do
+        expect( @plato1.vct ).to eq( 566 )
+      end
+      it &quot;Plato atributo porcentaje de proteinas&quot; do
+        expect( @plato1.porcenProteinas ).to eq( 21 )
+      end
+      it &quot;Plato atributo porcentaje de lípidos&quot; do
+        expect( @plato1.porcenLipidos ).to eq( 22 )
+      end
+      it &quot;Plato atributo porcentaje de hidratos&quot; do
+        expect( @plato1.porcenHidratos ).to eq( 6 )
+      end
+      it &quot;Plato salida formateada (to_s)&quot; do
+        expect( @plato1.to_s ).to eq( &quot;Ternera con salsa de queso: proteinas = #{21}%, lipidos = #{22}%, hidratos = #{6}%, vct = #{566}Kcal&quot; )     
+      end
+    end
+
+    context &quot;Clase Plato Ambiental y pruebas de jerarquía&quot; do
+      it &quot;Clase Plato Ambiental funcionando&quot; do
+        expect( @plato2 ).not_to eq( nil )
+        expect( @plato2.emisionesDiarias ).to eq( 35 )
+        expect( @plato2.metrosUsoTerreno ).to eq( 86 )
+        expect( @plato2.eficienciaEnergetica ).to eq( &quot;EficienciaEnergética -&gt; Lasaña de de pollo: #{35}kgCO2eq, #{86}Terreno m^2/año&quot; )
+      end
+        it &quot;Pruebas de jerarquía&quot; do
+        expect( @plato1.is_a?( PlatoAmbiental ) ).not_to eq( true )
+        expect( @plato2.instance_of?( PlatoAmbiental ) ).to eq( true )
+        expect( @plato2.class.ancestors ).to eq( [ PlatoAmbiental, Plato, Comparable, Object, Kernel, BasicObject ] )
+        expect( @plato2 ).to be_a_kind_of( PlatoAmbiental )
+      end
+    end
+
+    context &quot;Platos de diferentes tipos comparables y diferentes métodos de dietas realizables&quot; do
+      before :each do
+        @chocolateALaTaza = Plato.new( &quot;Chocolate a la taza&quot;, [ @chocolate, @nuez, @leche_vaca ] , [ 300, 100, 500 ] )
+        @PotajeDeLentejas = PlatoAmbiental.new( &quot;Potaje de Lentejas&quot;, [ @lentejas, @queso, @pollo ], [240, 30, 65 ] )
+        @MenuEspañol = PlatoAmbiental.new( &quot;Almuerzo Continental&quot;, [ @cerdo, @huevos, @cafe, @chocolate], [ 190, 160, 35, 80] )
+        @polloALaCerveza = Plato.new( &quot;Pollo a la Cerveza&quot;, [ @pollo, @cerveza, @tofu ], [ 220, 240, 35 ] )
+        @LentejasEstofadas = Plato.new( &quot;Lentejas Estofadas&quot;, [ @lentejas, @cerdo ], [ 210, 100 ] )
+        @Tiramisu = PlatoAmbiental.new( &quot;Tiramisu&quot;, [ @chocolate, @cafe, @leche_vaca, @huevos ], [ 500, 250, 125, 100 ] )
+        @BizcochoDeNueces = Plato.new( &quot;Bizcocho de Nueces&quot;, [ @nuez, @leche_vaca, @huevos ], [ 50, 600, 400 ] )
+        @MousseDeCafe = PlatoAmbiental.new( &quot;Mousse de Café&quot;, [ @leche_vaca, @huevos, @cafe ], [ 400, 360, 210 ] )
+        @HamburguesaLentejas = PlatoAmbiental.new( &quot;Hamburguesa de lentejas&quot;, [ @huevos, @lentejas ], [ 200, 300 ] )
+        @cerdoSalsaDeQueso = Plato.new( &quot;Cerdo en salsa de queso&quot;, [ @cerdo, @leche_vaca, @queso ], [ 400, 160, 70 ] )
+        @ensaladaDeSalmon = Plato.new( &quot;Ensalada de salmón&quot;, [ @salmon , @tofu , @huevos, @queso ], [ 235, 164, 88, 71 ] )
+        @CorderoAlHorno = PlatoAmbiental.new( &quot;Cordero Al horno&quot;, [ @carne_cordero, @cerveza], [ 500, 216 ] )
+
+        @PlatosDietaEspañola = Lista.new( [ @PotajeDeLentejas, @MenuEspañol, @polloALaCerveza, @chocolateALaTaza ] )
+        @PlatosDietaVasca = Lista.new( [ @LentejasEstofadas, @Tiramisu, @ensaladaDeSalmon, @CorderoAlHorno ] )
+        @PlatosDietaVegetaria = Lista.new( [ @Tiramisu, @BizcochoDeNueces, @MousseDeCafe, @BizcochoDeNueces ] )
+        @PlatosDietaVegetaliana = Lista.new( [ @Tiramisu, @HamburguesaLentejas, @chocolateALaTaza, @MousseDeCafe ] )
+        @PlatosDietaLocuraCarne = Lista.new( [ @CorderoAlHorno, @cerdoSalsaDeQueso, @ensaladaDeSalmon, @chocolateALaTaza ] )
+      end
+      it &quot;Platos de diferentes tipos comparables&quot; do
+        expect( @plato1 &lt; @plato2 ).to eq( true )
+      end
+      it &quot;Dieta con collect funcionando&quot; do
+        expect( @PlatosDietaEspañola.collect { | plato | &quot;Plato &quot; + plato.nombre  } ).to eq( [ &quot;Plato Potaje de Lentejas&quot;, &quot;Plato Almuerzo Continental&quot;, &quot;Plato Pollo a la Cerveza&quot;, &quot;Plato Chocolate a la taza&quot; ] )
+      end
+      it &quot;Dieta con select funcionando&quot; do
+        expect( @PlatosDietaVegetaria.select { | plato | plato.vct  &gt; 100 } ).to eq( [ @Tiramisu, @BizcochoDeNueces, @MousseDeCafe, @BizcochoDeNueces ] )
+      end
+      it &quot;Dieta con max funcionando&quot; do
+        expect( @PlatosDietaVegetaria.max ).to eq( @Tiramisu )
+      end
+      it &quot;Dieta con min funcionando&quot; do
+        expect( @PlatosDietaVasca.min ).to eq( @LentejasEstofadas )
+      end
+      it &quot;Dieta con sort funcionando&quot; do
+        expect( @PlatosDietaVegetaria.sort ).to eq( [ @MousseDeCafe, @BizcochoDeNueces, @BizcochoDeNueces, @Tiramisu ] )
+      end
+    end
+  end
+end</pre>
+
+<p>end</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>pr7 - RDoc Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/jquery.js"></script>
+<script src="../js/darkfish.js"></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../Gemfile.html">Gemfile</a>
+  
+    <li><a href="../Gemfile_lock.html">Gemfile.lock</a>
+  
+    <li><a href="../Guardfile.html">Guardfile</a>
+  
+    <li><a href="../README_md.html">README</a>
+  
+    <li><a href="../Rakefile.html">Rakefile</a>
+  
+    <li><a href="../bin/setup.html">setup</a>
+  
+    <li><a href="../prct06_tdd_gemspec.html">prct06_tdd.gemspec</a>
+  
+    <li><a href="../recursos/auxiliar.html">auxiliar</a>
+  
+    <li><a href="../recursos/p08_pdf.html">p08.pdf</a>
+  
+    <li><a href="../recursos/pr7.html">pr7</a>
+  
+    <li><a href="../recursos/pr8.html">pr8</a>
+  
+    <li><a href="../recursos/práctica6.html">práctica6</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page recursos/pr7">
+
+<p>describe <a href="../Lista.html"><code>Lista</code></a> do</p>
+
+<pre class="ruby"><span class="ruby-identifier">before</span> <span class="ruby-value">:each</span> <span class="ruby-keyword">do</span>
+
+  <span class="ruby-ivar">@lista1</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>()
+  <span class="ruby-ivar">@lista2</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>()
+
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">context</span> <span class="ruby-string">&quot;Creación de una Clase Lista&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Lista no vacía&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">expect</span>( <span class="ruby-ivar">@lista1</span> ).<span class="ruby-identifier">not_to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-keyword">nil</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-ivar">@chocolate</span> ).<span class="ruby-identifier">not_to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-keyword">nil</span> )
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Método is_empty? funcionando&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">expect</span>( <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">is_empty?</span> ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-keyword">true</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-ivar">@lista2</span>.<span class="ruby-identifier">is_empty?</span> ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-keyword">true</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">context</span> <span class="ruby-string">&quot;Añadiendo elementos a Lista&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Método Inserta Adelante&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@carne_vaca</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@tofu</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@queso</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@pollo</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@chocolate</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">cabeza</span>.<span class="ruby-identifier">prev</span> ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-keyword">nil</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">cabeza</span>.<span class="ruby-identifier">value</span> ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-ivar">@chocolate</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">cabeza</span>.<span class="ruby-identifier">next</span>.<span class="ruby-identifier">value</span> ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-ivar">@pollo</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">tamaño</span> ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-value">5</span> )
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Método Inserta Atrás&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@chocolate</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@pollo</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@queso</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@tofu</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@carne_vaca</span> )
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">cola</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-ivar">@carne_vaca</span> )
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">cola</span>.<span class="ruby-identifier">prev</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-ivar">@tofu</span> )
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">tamaño</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-value">5</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">context</span> <span class="ruby-string">&quot;Extrayendo elementos a Lista&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Método extraer por delante&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">extraerDelante</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-string">&quot;Lista Vacía&quot;</span>)
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@queso</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@pollo</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@chocolate</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@tofu</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@carne_vaca</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@cerveza</span> )
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">extraerDelante</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-ivar">@chocolate</span> )
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">cabeza</span>.<span class="ruby-identifier">next</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-ivar">@queso</span> )
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">tamaño</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-value">5</span> )
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Método extraer por detrás&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">extraerDetras</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>(<span class="ruby-string">&quot;Lista Vacía&quot;</span>)
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@queso</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@pollo</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAdelante</span>( <span class="ruby-ivar">@chocolate</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@tofu</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@carne_vaca</span> )
+    <span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">insertaAtras</span>( <span class="ruby-ivar">@cerveza</span> )
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">extraerDetras</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-ivar">@cerveza</span> )
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">cola</span>.<span class="ruby-identifier">value</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-ivar">@carne_vaca</span> )
+    <span class="ruby-identifier">expect</span>(<span class="ruby-ivar">@lista1</span>.<span class="ruby-identifier">tamaño</span>).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-value">5</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">context</span> <span class="ruby-string">&quot;Creación de Dietas y comprobación de porcentajes, emisiones y terreno&quot;</span> <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">before</span> <span class="ruby-value">:each</span> <span class="ruby-keyword">do</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dietaPorcentajeHombre</span>( <span class="ruby-identifier">dietaLista</span> )
+      <span class="ruby-identifier">cdr</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">proteinas</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">grasas</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">carbohidratos</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">total</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">cabeza</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">tamaño</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Lista Vacía&quot;</span>
+      <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">while</span>(<span class="ruby-identifier">nodoAux</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)                
+        <span class="ruby-identifier">cdr</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">valorEnergetico</span>()
+        <span class="ruby-identifier">proteinas</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">proteinas</span>()
+        <span class="ruby-identifier">grasas</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">lipidos</span>()
+        <span class="ruby-identifier">carbohidratos</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">carbohidratos</span>()
+        <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;next&quot;</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">total</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">proteinas</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">grasas</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">carbohidratos</span>)
+      <span class="ruby-identifier">cdr</span> = (<span class="ruby-identifier">cdr</span><span class="ruby-operator">/</span><span class="ruby-value">30.0</span>).<span class="ruby-identifier">round</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{cdr}%CDR, #{( ( carbohidratos * 100 ) / total ).round}% carbohidratos, #{( ( grasas * 100 ) / total ).round}% grasas, #{( ( proteinas * 100 ) / total ).round}% proteínas&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dietaPorcentajeMujer</span>( <span class="ruby-identifier">dietaLista</span> )
+      <span class="ruby-identifier">cdr</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">proteinas</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">grasas</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">carbohidratos</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">total</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">cabeza</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">tamaño</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Lista Vacía&quot;</span>
+      <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">while</span>(<span class="ruby-identifier">nodoAux</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)                
+        <span class="ruby-identifier">cdr</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">valorEnergetico</span>()
+        <span class="ruby-identifier">proteinas</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">proteinas</span>()
+        <span class="ruby-identifier">grasas</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">lipidos</span>()
+        <span class="ruby-identifier">carbohidratos</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">carbohidratos</span>()
+        <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;next&quot;</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">total</span> <span class="ruby-operator">+=</span> (<span class="ruby-identifier">proteinas</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">grasas</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">carbohidratos</span>)
+      <span class="ruby-identifier">cdr</span> = (<span class="ruby-identifier">cdr</span><span class="ruby-operator">/</span><span class="ruby-value">23.0</span>).<span class="ruby-identifier">round</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{cdr}%CDR, #{( ( carbohidratos * 100 ) / total ).round}% carbohidratos, #{( ( grasas * 100 ) / total ).round}% grasas, #{( ( proteinas * 100 ) / total ).round}% proteínas&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dietaEmisionesDiarias</span>( <span class="ruby-identifier">dietaLista</span> )  
+      <span class="ruby-identifier">gases</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">cabeza</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">tamaño</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Lista Vacía&quot;</span>
+      <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">while</span>(<span class="ruby-identifier">nodoAux</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)                
+        <span class="ruby-identifier">gases</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">gasEfectoInv</span>()
+        <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;next&quot;</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{gases.round}kg CO2eq diario&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dietaEmisionesAnual</span>( <span class="ruby-identifier">dietaLista</span> )
+      <span class="ruby-identifier">gases</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">cabeza</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">tamaño</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Lista Vacía&quot;</span>
+      <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">while</span>(<span class="ruby-identifier">nodoAux</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)                
+        <span class="ruby-identifier">gases</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">gasEfectoInv</span>()
+        <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;next&quot;</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{gases.round * 365}kg CO2eq anual&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dietaMetrosCuadrados</span>( <span class="ruby-identifier">dietaLista</span> )  
+      <span class="ruby-identifier">metros</span> = <span class="ruby-value">0</span>
+      <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">cabeza</span>
+      <span class="ruby-keyword">if</span> (<span class="ruby-identifier">dietaLista</span>.<span class="ruby-identifier">tamaño</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;Lista Vacía&quot;</span>
+      <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">while</span>(<span class="ruby-identifier">nodoAux</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">nil</span>)                
+        <span class="ruby-identifier">metros</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;value&quot;</span>].<span class="ruby-identifier">terrenoAño</span>()
+        <span class="ruby-identifier">nodoAux</span> = <span class="ruby-identifier">nodoAux</span>[<span class="ruby-string">&quot;next&quot;</span>]
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{metros.round}m2/año&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Lista de alimentos dieta española y la vasca&quot;</span> <span class="ruby-keyword">do</span>
+
+    <span class="ruby-ivar">@españolaH</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@pollo</span>, <span class="ruby-ivar">@queso</span>, <span class="ruby-ivar">@lentejas</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@chocolate</span>] )
+    <span class="ruby-ivar">@españolaM</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@lentejas</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@queso</span>, <span class="ruby-ivar">@cerveza</span>, <span class="ruby-ivar">@tofu</span>, <span class="ruby-ivar">@huevos</span>, <span class="ruby-ivar">@cerveza</span> ] )
+    <span class="ruby-ivar">@vascaH</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@lentejas</span>, <span class="ruby-ivar">@lentejas</span>, <span class="ruby-ivar">@lentejas</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@chocolate</span>] )
+    <span class="ruby-ivar">@vascaM</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@lentejas</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@chocolate</span>] )
+
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeHombre</span>( <span class="ruby-ivar">@españolaH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{82}%CDR, #{40}% carbohidratos, #{36}% grasas, #{24}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeMujer</span>( <span class="ruby-ivar">@españolaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{92}%CDR, #{36}% carbohidratos, #{37}% grasas, #{27}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesDiarias</span>( <span class="ruby-ivar">@españolaH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{22}kg CO2eq diario&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesAnual</span>( <span class="ruby-ivar">@españolaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{7665}kg CO2eq anual&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaMetrosCuadrados</span>( <span class="ruby-ivar">@españolaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{64}m2/año&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeHombre</span>( <span class="ruby-ivar">@vascaH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{99}%CDR, #{61}% carbohidratos, #{22}% grasas, #{17}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeMujer</span>( <span class="ruby-ivar">@vascaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{100}%CDR, #{59}% carbohidratos, #{30}% grasas, #{11}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesDiarias</span>( <span class="ruby-ivar">@vascaH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{17}kg CO2eq diario&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesAnual</span>( <span class="ruby-ivar">@vascaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{4745}kg CO2eq anual&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaMetrosCuadrados</span>( <span class="ruby-ivar">@vascaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{26}m2/año&quot;</span> ) 
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Lista de alimentos dieta vegetaria y vegetaliana&quot;</span> <span class="ruby-keyword">do</span>
+
+    <span class="ruby-ivar">@vegetariaH</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@huevos</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@huevos</span>, <span class="ruby-ivar">@huevos</span>, <span class="ruby-ivar">@tofu</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@huevos</span>, <span class="ruby-ivar">@huevos</span> ] )
+    <span class="ruby-ivar">@vegetariaM</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@huevos</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@huevos</span>, <span class="ruby-ivar">@huevos</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@leche_vaca</span>, <span class="ruby-ivar">@huevos</span> ] )
+    <span class="ruby-ivar">@vegetalianaH</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@tofu</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@tofu</span> ] ) 
+    <span class="ruby-ivar">@vegetalianaM</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@tofu</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@tofu</span>, <span class="ruby-ivar">@lentejas</span> ] )
+
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeHombre</span>( <span class="ruby-ivar">@vegetariaH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{95}%CDR, #{39}% carbohidratos, #{37}% grasas, #{24}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeMujer</span>( <span class="ruby-ivar">@vegetariaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{98}%CDR, #{39}% carbohidratos, #{36}% grasas, #{25}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesDiarias</span>( <span class="ruby-ivar">@vegetariaH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{59}kg CO2eq diario&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesAnual</span>( <span class="ruby-ivar">@vegetariaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{20805}kg CO2eq anual&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaMetrosCuadrados</span>( <span class="ruby-ivar">@vegetariaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{128}m2/año&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeHombre</span>( <span class="ruby-ivar">@vegetalianaH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{97}%CDR, #{40}% carbohidratos, #{45}% grasas, #{15}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeMujer</span>( <span class="ruby-ivar">@vegetalianaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{98}%CDR, #{38}% carbohidratos, #{39}% grasas, #{22}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesDiarias</span>( <span class="ruby-ivar">@vegetalianaH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{12}kg CO2eq diario&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesAnual</span>( <span class="ruby-ivar">@vegetalianaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{2555}kg CO2eq anual&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaMetrosCuadrados</span>( <span class="ruby-ivar">@vegetalianaM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{27}m2/año&quot;</span> )
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">it</span> <span class="ruby-string">&quot;Lista de la locura por la carne&quot;</span> <span class="ruby-keyword">do</span>
+
+    <span class="ruby-ivar">@locuraCarneH</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@pollo</span>, <span class="ruby-ivar">@cerdo</span>, <span class="ruby-ivar">@carne_cordero</span>, <span class="ruby-ivar">@carne_vaca</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@chocolate</span>, <span class="ruby-ivar">@cerdo</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@queso</span> ] )
+    <span class="ruby-ivar">@locuraCarneM</span> = <span class="ruby-constant">Lista</span>.<span class="ruby-identifier">new</span>( [ <span class="ruby-ivar">@pollo</span>, <span class="ruby-ivar">@cerdo</span>, <span class="ruby-ivar">@carne_cordero</span>, <span class="ruby-ivar">@carne_vaca</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@nuez</span>, <span class="ruby-ivar">@queso</span> ] )
+
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeHombre</span>( <span class="ruby-ivar">@locuraCarneH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{98}%CDR, #{19}% carbohidratos, #{44}% grasas, #{37}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaPorcentajeMujer</span>( <span class="ruby-ivar">@locuraCarneM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{101}%CDR, #{12}% carbohidratos, #{48}% grasas, #{40}% proteínas&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesDiarias</span>( <span class="ruby-ivar">@locuraCarneH</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{105}kg CO2eq diario&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaEmisionesAnual</span>( <span class="ruby-ivar">@locuraCarneM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{34675}kg CO2eq anual&quot;</span> )
+    <span class="ruby-identifier">expect</span>( <span class="ruby-identifier">dietaMetrosCuadrados</span>( <span class="ruby-ivar">@locuraCarneM</span> ) ).<span class="ruby-identifier">to</span> <span class="ruby-identifier">eq</span>( <span class="ruby-node">&quot;#{424}m2/año&quot;</span> )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.1.0.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
